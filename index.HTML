@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Погода по городам</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="weather-app">
+    <h2>Погода по городам</h2>
+    <input type="text" id="cityInput" placeholder="Введите город" />
+    <button onclick="getWeather()">Поиск</button>
+    <div class="error" id="errorMsg"></div>
+    <div class="weather-result" id="weatherResult"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
