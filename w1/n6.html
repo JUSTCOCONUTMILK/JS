@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Задание 6</title>
+  <style>
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+      margin: 50px;
+    }
+
+    .tooltip {
+      visibility: hidden;
+      position: absolute;
+      background: black;
+      color: white;
+      padding: 5px;
+      border-radius: 4px;
+      white-space: nowrap;
+      font-size: 14px;
+      transform: translateX(-50%);
+    }
+
+    .tooltip-container:hover .tooltip {
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+  <div class="tooltip-container">
+    <button>Кнопка 1</button>
+    <div class="tooltip" id="tooltip1">Подсказка 1</div>
+  </div>
+  <div class="tooltip-container">
+    <button>Кнопка 2</button>
+    <div class="tooltip" id="tooltip2">Подсказка 2</div>
+  </div>
+
+  <script>
+    function adjustTooltipPosition() {
+      document.querySelectorAll('.tooltip-container').forEach(container => {
+        const tooltip = container.querySelector('.tooltip');
+        const rect = container.getBoundingClientRect();
+        if (rect.top < 40) {
+          tooltip.style.top = '110%'; // снизу
+        } else {
+          tooltip.style.top = '-30px'; // сверху
+        }
+      });
+    }
+
+    window.addEventListener('resize', adjustTooltipPosition);
+    window.addEventListener('DOMContentLoaded', adjustTooltipPosition);
+  </script>
+</body>
+</html>
