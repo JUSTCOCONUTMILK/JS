@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Задание 2</title>
+  <style>
+    #modal {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      padding: 20px;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px black;
+    }
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <button onclick="openModal()">Открыть</button>
+
+  <div id="overlay"></div>
+  <div id="modal">
+    <p>Это модальное окно</p>
+    <button onclick="closeModal()">Закрыть</button>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('modal').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
