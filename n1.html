@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Задание 1</title>
+</head>
+<body>
+  <h2>Введите имя:</h2>
+  <input type="text" id="nameInput">
+
+  <script>
+    document.getElementById('nameInput').addEventListener('input', function(e) {
+      this.value = this.value.replace(/\d/g, '');
+    });
+  </script>
+</body>
+</html>
