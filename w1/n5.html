@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Задание 5</title>
+  <style>
+    li {
+      padding: 8px;
+      cursor: pointer;
+    }
+    .selected {
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <ul id="bookList">
+    <li>Книга 1</li>
+    <li>Книга 2</li>
+    <li>Книга 3</li>
+  </ul>
+
+  <script>
+    const list = document.getElementById('bookList');
+    let selectedItem = null;
+
+    list.addEventListener('click', function(e) {
+      if (e.target.tagName === 'LI') {
+        if (selectedItem) selectedItem.classList.remove('selected');
+        e.target.classList.add('selected');
+        selectedItem = e.target;
+      }
+    });
+  </script>
+</body>
+</html>
