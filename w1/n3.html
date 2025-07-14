@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Задание 3</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    #field {
+      width: 100vw;
+      height: 100vh;
+      background-color: green;
+      position: relative;
+    }
+    #ball {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      border-radius: 50%;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/Soccerball.svg') no-repeat center/contain;
+      transition: left 0.5s, top 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <div id="field" onclick="moveBall(event)">
+    <div id="ball"></div>
+  </div>
+
+  <script>
+    const field = document.getElementById('field');
+    const ball = document.getElementById('ball');
+
+    function moveBall(event) {
+      const fieldRect = field.getBoundingClientRect();
+      let x = event.clientX - fieldRect.left - 50;
+      let y = event.clientY - fieldRect.top - 50;
+
+      x = Math.max(0, Math.min(x, field.clientWidth - 100));
+      y = Math.max(0, Math.min(y, field.clientHeight - 100));
+
+      ball.style.left = x + 'px';
+      ball.style.top = y + 'px';
+    }
+  </script>
+</body>
+</html>
